@@ -52,3 +52,7 @@ Route::get('/', [PageController::class, 'index']);
 Route::get('/about', [PageController::class, 'about']);
 
 Route::get('/articles/{id}', [PageController::class, 'articles']);
+
+Route::resource('photos', PhotoController::class);
+Route::resource('photos', PhotoController::class)->only(['index', 'show']);
+Route::resource('photos', PhotoController::class)->except(['create','store','update','destroy']);
